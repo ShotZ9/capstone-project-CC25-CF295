@@ -182,6 +182,11 @@ Tim CC25-CF295:
 
 ---
 
+## Video Demo
+(Video Demo)[https://drive.google.com/drive/folders/1iiimUxSNQ6S12_t0ckD2w9ITQKtwXDlO]
+
+---
+
 ## 📄 Lisensi
 
 Proyek ini dikembangkan sebagai bagian dari Capstone Project Dicoding x Kampus Merdeka 2025. Hak cipta dilindungi oleh masing-masing kontributor.
