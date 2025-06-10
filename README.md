@@ -36,7 +36,7 @@ capstone-project-CC25-CF295/
 ### 📚 Dokumentasi API
 
 Base URL (Development): `http://localhost:4000` <br>
-Base URL (Production): `https://finmate-backend-production.up.railway.app`
+Base URL (Production): `https://capstone-project-cc25-cf295-production.up.railway.app`
 
 #### 📝 Register
 - `POST /api/auth/register`
