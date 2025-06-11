@@ -1,7 +1,7 @@
 import { addTransactionModel } from "../../models/transactions/Transaction.js";
 
 export const addTransaction = async (req, res) => {
-  const { amount, type, description, date } = req.body;
+  const { amount, type, description, date, category } = req.body;
   const userId = req.userId;
 
   try {
@@ -11,6 +11,7 @@ export const addTransaction = async (req, res) => {
       type,
       description,
       date: new Date(date),
+      category,
     };
 
     const id = await addTransactionModel(transactionData);
