@@ -20,6 +20,7 @@ function DashboardUser() {
   const [summary, setSummary] = useState(null);
   const [error, setError] = useState(null);
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [showHamburger, setShowHamburger] = useState(true);
   const isMobile = useMediaQuery("(max-width:900px)");
   const navigate = useNavigate();
 
@@ -36,6 +37,18 @@ function DashboardUser() {
 
     fetchSummary();
   }, []);
+
+  const handleSidebarOpen = () => {
+    setShowHamburger(false);
+    setSidebarOpen(true);
+  };
+
+  const handleSidebarClose = () => {
+    setSidebarOpen(false);
+    setTimeout(() => {
+      setShowHamburger(true);
+    }, 300); // delay to match Drawer closing animation
+  };
 
   if (error) return <div>{error}</div>;
   if (!summary) return <div>Loading...</div>;
@@ -55,12 +68,12 @@ function DashboardUser() {
 
   return (
     <Box sx={{ display: "flex" }}>
-      <Sidebar open={sidebarOpen} onClose={() => setSidebarOpen(false)} />
+      <Sidebar open={sidebarOpen} onClose={handleSidebarClose} />
 
       <Box sx={{ flexGrow: 1, p: 3 }}>
-        {isMobile && (
+        {isMobile && showHamburger && (
           <IconButton
-            onClick={() => setSidebarOpen(true)}
+            onClick={handleSidebarOpen}
             sx={{
               position: "fixed",
               top: 16,
